@@ -19,7 +19,7 @@ export default class Info extends React.Component{
 	}
 
 	render() {
-		const {json: j} = this.state.json;
-		return <p>{`Info: ${j}`}</p>;
+		const json = this.state.json;
+		return (<p>{`Info: ${json}`}</p>);
 	}
 }

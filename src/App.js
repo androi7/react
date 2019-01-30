@@ -1,24 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Info from './components/Info';
 
 class App extends Component {
+
 	constructor() {
 		super();
 		this.getInfo = this.getInfo.bind(this);
-		let m = '';
+		this.state = {
+			check: false
+		};
 	}
 
 	getInfo() {
-			this.m = <Info />;
+			this.setState({
+				check: true
+			});
 		}
 
   render() {
+  	const check  = this.state.check;
     return (
       <div className="App">
       <button onClick={this.getInfo}>Get Info</button>
-            {this.m}
+            {check ? <Info /> : null}
       </div>
     );
   }
